@@ -30,9 +30,8 @@ int main(void)
 		b[i] = d_solution[i];
 	}*/
 
-	printf("Enter size of quadric matrix: ");
-	scanf("%d", &m);
-	n = m;
+	printf("Enter size main matrix: ");
+	scanf("%d", &m, &n);
 
 	a = create_matrix(m, n);
 	b = create_array(m);
