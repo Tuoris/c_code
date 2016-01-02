@@ -1,5 +1,4 @@
-# cpp
-Simple C++ projects
+# Simple C++ projects
 
 **Gauss**
 
