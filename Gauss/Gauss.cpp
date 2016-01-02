@@ -30,8 +30,8 @@ int main(void)
 		b[i] = d_solution[i];
 	}*/
 
-	printf("Enter size main matrix: ");
-	scanf("%d", &m, &n);
+	printf("Enter size of main matrix: ");
+	scanf("%d %d", &m, &n);
 
 	a = create_matrix(m, n);
 	b = create_array(m);
