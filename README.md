@@ -1,2 +1,2 @@
-# c_code
-Simple C projects 
+# cpp
+Simple C++ projects 
