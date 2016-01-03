@@ -32,7 +32,7 @@ int main(void) {
     printf(".\n");
 
     printf(">>> ");
-    char buffer[80], uin[2][10];
+    char buffer[80], uin[3][10];
     float cash;
     fgets(buffer, 80, stdin);
     fflush(stdin);
