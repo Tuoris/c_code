@@ -2,11 +2,13 @@
 #include "strings.h"
 #include "stdlib.h"
 
+typedef char name[10];
+
 int min(int, int);
-int find(char [10]);
+int find(name);
 
 struct currency {
-    char name[10];
+    name cname;
     float rate;
 };
 
@@ -26,43 +28,46 @@ int main(void) {
     puts("\n\t\tCurrency converter");
     puts("Enter your expression in format: \'25 usd to uah\'");
     printf("Available currencies: ");
-    for (int i = 0; strcmp(rates[i].name, "end"); ++i) {
-        printf("%s ", rates[i].name);
+    for (int i = 0; strcmp(rates[i].cname, "end"); ++i) {
+        printf("%s ", rates[i].cname);
     }
     printf(".\n");
+    char ans = 'y';
+    while (ans != 'n') {
+        printf(">>> ");
+        char buffer[80];
+        name uin[3];
+        float cash;
+        fgets(buffer, 80, stdin);
+        fflush(stdin);
+        
+        char *pch = strtok(buffer, " -\t\n");
+        cash = atof(pch);
+        int i = 0;
+        int len;
+        while (pch != NULL && i < 3) {
+            pch = strtok(NULL, " -\t\n");
+            len = min(9, strlen(pch));
+            strncpy(uin[i], pch, len);
+            uin[i][len] = '\0';
+            i++;
+        }
+        fflush(stdin);
 
-    printf(">>> ");
-    char buffer[80], uin[3][10];
-    float cash;
-    fgets(buffer, 80, stdin);
-    fflush(stdin);
-    
-    char *pch = strtok(buffer, " -\t\n");
-    cash = atof(pch);
-    int i = 0;
-    int len;
-    while (pch != NULL && i < 3) {
-        pch = strtok(NULL, " -\t\n");
-        len = min(9, strlen(pch));
-        strncpy(uin[i], pch, len);
-        uin[i][len] = '\0';
-        /*printf("%s\n", uin[i]);
-        printf("%d %d\n", find(uin[i]), i);*/
-        i++;
+        if (find(uin[0]) == -1 || find(uin[2]) == -1) {
+            puts("!<< can\'t find such rate");
+        } else if (!strcmp(uin[0], uin[2])) {
+            printf("%.2f %s\n", cash, uin[2]);
+        } else {
+            float uah_rate = rates[find(uin[0])].rate;
+            float rate     = rates[find(uin[2])].rate;
+            cash = cash * uah_rate / rate;
+            printf("<<< %.2f %s\n", cash, uin[2]);
+        }
+        printf(">>> continue? (y/n) ");
+        scanf("%c", &ans);
+        fflush(stdin);
     }
-    fflush(stdin);
-
-    if (find(uin[0]) == -1 || find(uin[2]) == -1) {
-        puts("!<< can\'t find such rate");
-    } else if (!strcmp(uin[0], uin[2])) {
-        printf("%.2f %s\n", cash, uin[2]);
-    } else {
-        float uah_rate = rates[find(uin[0])].rate;
-        float rate     = rates[find(uin[2])].rate;
-        cash = cash * uah_rate / rate;
-        printf("<<< %.2f %s\n", cash, uin[2]);
-    }
-
     return 0;
 }
 
@@ -70,10 +75,10 @@ int min(int x, int y) {
     return (x < y)? x : y; 
 } 
 
-int find(char cur[10]) {
+int find(name cur) {
     int index = -1;
-    for (int i = 0; strcmp(rates[i].name, "end"); ++i) {
-        if(!strcmp(cur, rates[i].name)) {
+    for (int i = 0; strcmp(rates[i].cname, "end"); ++i) {
+        if(!strcmp(cur, rates[i].cname)) {
             index = i;
             return index;
         }
