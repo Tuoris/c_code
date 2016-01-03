@@ -1,6 +1,7 @@
 #include "stdio.h"
 #include "strings.h"
 #include "stdlib.h"
+#include "ctype.h"
 
 typedef char name[10];
 
@@ -51,6 +52,11 @@ int main(void) {
             strncpy(uin[i], pch, len);
             uin[i][len] = '\0';
             i++;
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < strlen(uin[i]); j++) {
+                uin[i][j] = tolower(uin[i][j]);
+            }
         }
         fflush(stdin);
 
