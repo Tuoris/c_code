@@ -11,3 +11,7 @@ Converts currency
 **Decimal to binary converter**
 
 Converts positive decimal numbers into binary
+
+**PI**
+
+Prints some approximate values of pi, include interactive choice 
