@@ -1,18 +1,23 @@
 #include "stdio.h"
 #include "math.h"
 
-int fact(int);
-double fast_pi(void);
+double leibniz_pi(int);
+double nilakantha_pi(int);
+double fast_pi(int);
 double sigma(int);
 void super_pi(int);
+int fact(int);
 void show_rule(void) {
-    printf("Enter how many numbers after point you "
+    printf("Enter how many numbers of pi you "
            "want to see or \'q\' to exit\n>>> ");
 }
 
 int main(void) {
-    int user_input;
+    printf("Gregory-Leibniz series:\t\t%.10f\n", leibniz_pi(100000));
+    printf("Nilakantha series\t\t%.10f\n", nilakantha_pi(500));
+    printf("Pi by Srinivasa Ramanujan\t%.10f\n", fast_pi(5));
     show_rule();
+    int user_input;
     while(scanf("%d", &user_input) == 1) {
         super_pi(user_input);
         char ch;
@@ -22,20 +27,34 @@ int main(void) {
     return 0;
 }
 
-int fact(int num) {
-    int f = (num == 0)? 1: num;
-    while (num > 1) {
-        num--, f *= num;
+double leibniz_pi(int n) {
+    // 14th Madhava of Sangamagrama
+    // Slowly coverges to pi 
+    // 100000 iterations gives pi correct to 4 decimal places
+    double pi = 0.0;
+    for (int it = 0; it < n; it++) {
+        pi += pow(-1.0, it)/(2 * it + 1);
     }
-    return f;
+    return pi*4;
 }
 
-double fast_pi(void) {
+double nilakantha_pi(int n) {
+    // 15th Nilakantha
+    // Move to pi faster then Leibniz series
+    // But there is a bug and I don't know where
+    double pi = 3.0;
+    for (long it = 1; it < n; it++) {
+        pi += pow(-1.0, (it % 2) + 1)* 4.0 /((2 * it)*(2 * it + 1)*(2 * it + 2));
+    }
+    return pi;
+}
+
+double fast_pi(int n) {
+    // 1914 Srinivasa Ramanujan
     // Very fast but have limitations with c types
     // Calculates only 18 digits after point
-    return 9801.0/(2.0*pow(2.0, 0.5)*sigma(15));
+    return 9801.0/(2.0*pow(2.0, 0.5)*sigma(n));
 }
-
 double sigma(int n) {
     double result = 0;
     for (int k = 0; k <= n; k++) {
@@ -46,7 +65,8 @@ double sigma(int n) {
 }
 
 void super_pi(int n) {
-    n = (n >= 1000)? 1000: n;
+    // TODO correct precision
+    n = (n > 1000)? 1000: n;
     char pi [] = "3.14159265358979323846264338327950288419716939937510" 
     "58209749445923078164062862089986280348253421170679821480865132823"
     "06647093844609550582231725359408128481117450284102701938521105559"
@@ -67,4 +87,12 @@ void super_pi(int n) {
         putchar(pi[i]);
     }
     puts("");
+}
+
+int fact(int num) {
+    int f = (num == 0)? 1: num;
+    while (num > 1) {
+        num--, f *= num;
+    }
+    return f;
 }
