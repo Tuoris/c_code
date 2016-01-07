@@ -33,18 +33,18 @@ double leibniz_pi(int n) {
     // 100000 iterations gives pi correct to 4 decimal places
     double pi = 0.0;
     for (int it = 0; it < n; it++) {
-        pi += pow(-1.0, it)/(2 * it + 1);
+        pi += (it % 2? -1.0: 1.0)/(2 * it + 1);
     }
     return pi*4;
 }
 
 double nilakantha_pi(int n) {
-    // 15th Nilakantha
+    // 15th Nilakantha Somayaji
     // Move to pi faster then Leibniz series
     // But there is a bug and I don't know where
     double pi = 3.0;
     for (long it = 1; it < n; it++) {
-        pi += pow(-1.0, (it % 2) + 1)* 4.0 /((2 * it)*(2 * it + 1)*(2 * it + 2));
+        pi += (it % 2? 1.0: -1.0)* 4.0 /((2 * it)*(2 * it + 1)*(2 * it + 2));
     }
     return pi;
 }
