@@ -16,7 +16,7 @@ Converts positive decimal numbers into binary
 
 **PI**
 
-Prints some approximate values of pi, include interactive choice 
+Prints some approximate values of pi and let you choose how many digits of pi will be print 
 
 **Tile cost**
 
