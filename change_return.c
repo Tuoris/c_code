@@ -13,7 +13,6 @@ int main(void) {
     CASH change;
     printf("Enter a cost and the amount of money that given\n>>> ");
     scanf("%lf %lf", &cost, &money);
-    printf("%f %f\n", cost, money);
     give_change(cost, money, &change);
     printf("\nYour change: %d dollar(s) and %d cent(s).\n", change.ipart, change.cpart);
     if (change.cpart) print_change(change.cpart);
@@ -28,7 +27,7 @@ void give_change(double cost, double money, CASH * change) {
 
 void print_change(int coin_change) {
     int    coins [5] = {50, 25, 10, 5, 1};
-    char * names [5] = {"half", "quarter", "dime", "nickel", "penny"};
+    char * names [5] = {"half", "quarter", "dime", "nickel", "penn(y/ie)"};
     int number; // number of coins need
     printf("You will get: ");
     for (int i = 0; i < 5; i++) {
