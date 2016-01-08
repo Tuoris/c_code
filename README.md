@@ -20,4 +20,8 @@ Prints some approximate values of pi, include interactive choice
 
 **Tile cost**
 
-Calculate the total cost of tile it would take to cover a floor plan of width and height, using a cost entered by the user.
+Calculates the total cost of tile it would take to cover a floor plan of width and height, using a cost entered by the user.
+
+**Change return**
+
+Calculates change and prints how the number of quarters, dimes, nickels, pennies needed for the change 
