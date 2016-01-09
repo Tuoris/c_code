@@ -25,3 +25,11 @@ Calculates the total cost of tile it would take to cover a floor plan of width a
 **Change return**
 
 Calculates change and prints how the number of quarters, dimes, nickels, pennies needed for the change 
+
+**Fizz Buzz**
+
+Prints numbers from 0 to 100. For multiples of 3 print “Fizz” and for the multiples of 5 print “Buzz”. For numbers which are multiples of both 3 and 5 print “FizzBuzz”
+
+**String reverse**
+
+Just reverse entered string
