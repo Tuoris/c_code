@@ -30,10 +30,10 @@ Calculates change and prints how the number of quarters, dimes, nickels, pennies
 
 Prints numbers from 0 to 100. For multiples of 3 print “Fizz” and for the multiples of 5 print “Buzz”. For numbers which are multiples of both 3 and 5 print “FizzBuzz”
 
-**String reverse**
+**String reverser**
 
 Just reverse entered string
 
-**Count Vowels**
+**Vowels counter**
 
 Counts the number of vowels in the text and sum of each vowel found.
