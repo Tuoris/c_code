@@ -31,7 +31,7 @@ void insant_reverse(char * string) {
 int main(void) {
     char string [MAX_LEN];
     printf("Enter any string\n>>> ");
-    fgets(string, MAX_LEN - 1, stdin);
+    fgets(string, MAX_LEN, stdin);
     char reversed [MAX_LEN];
     reverse(string, reversed);
     printf("Entered string: %s\n", string);
