@@ -33,3 +33,7 @@ Prints numbers from 0 to 100. For multiples of 3 print “Fizz” and for the mu
 **String reverse**
 
 Just reverse entered string
+
+**Count Vowels**
+
+Counts the number of vowels in the text and sum of each vowel found.
