@@ -1,4 +1,5 @@
 #include "stdio.h"
+#include "ctype.h"
 #define MAX_LEN 256
 #define V_COUNT 6
 
@@ -14,7 +15,7 @@ int main(void) {
     int text_pos = 0;
     while (text[text_pos]) {
         for (int i = 0; i < V_COUNT; i++) {
-            if (text[text_pos] == vowels[i]) {
+            if (tolower(text[text_pos]) == vowels[i]) {
                 vowels_number++;
                 numbers[i]++;
             }
