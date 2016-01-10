@@ -32,7 +32,7 @@ Prints numbers from 0 to 100. For multiples of 3 print “Fizz” and for the mu
 
 **String reverser**
 
-Just reverse entered string
+Reverse entered string and check whether the string is a palindrome
 
 **Vowels counter**
 
