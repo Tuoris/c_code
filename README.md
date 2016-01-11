@@ -37,3 +37,7 @@ Reverse entered string and check whether the string is a palindrome
 **Vowels counter**
 
 Counts the number of vowels in the text and sum of each vowel found.
+
+**Collatz Conjecture**
+
+Collatz Conjecture realization
