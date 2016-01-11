@@ -13,11 +13,10 @@ int len(char * string) {
 }
 
 // Didn't want use ctype.h
-int tolower(int c) {
-    if (c < 'A' || c > 'Z')
-        return c;
-    else
+inline int tolower(int c) {
+    if (c >= 'A' && c <= 'Z')
         return c - 'A' + 'a';
+    return c;
 }
 
 int main(void) {
