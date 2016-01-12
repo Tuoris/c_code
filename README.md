@@ -28,7 +28,8 @@ Calculates change and prints how the number of quarters, dimes, nickels, pennies
 
 **Fizz Buzz**
 
-Prints numbers from 0 to 100. For multiples of 3 print “Fizz” and for the multiples of 5 print “Buzz”. For numbers which are multiples of both 3 and 5 print “FizzBuzz”
+Prints numbers from 0 to 100. For multiples of 3 print “Fizz” and for the multiples of 5 print “Buzz”. 
+For numbers which are multiples of both 3 and 5 print “FizzBuzz”
 
 **String reverser**
 
@@ -41,3 +42,7 @@ Counts the number of vowels in the text and sum of each vowel found.
 **Collatz Conjecture**
 
 Collatz Conjecture realization
+
+**Distance Between Two Cities**
+
+Calculates the distance between two cities using coordinates and allows the user to specify a unit of distance.
