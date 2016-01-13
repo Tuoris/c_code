@@ -72,6 +72,5 @@ int check(char ch, char * string) {
 }
 
 void clear_buffer() {
-    char c;
-    while((c = getchar()) != '\n');
+    while(getchar() != '\n');
 }
