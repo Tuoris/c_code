@@ -1,6 +1,7 @@
 #include "stdio.h"
 
 void print_array(int *arr, int length);
+void copy_array(int *arr, int *result, int length);
 void buble_sort(int *arr, int *result, int length);
 
 int main(void) {
@@ -22,10 +23,14 @@ void print_array(int *arr, int length) {
     printf("%d}\n", arr[length - 1]);
 }
 
-void buble_sort(int *arr, int *result, int length) {
+void copy_array(int *arr, int *result, int length) {
     for (int i = 0; i < length; i++) {
         result[i] = arr[i];
     }
+}
+
+void buble_sort(int *arr, int *result, int length) {
+    copy_array(arr, result, length);
     int temp;
     for (int i = 0; i < length; i++) {
         for (int u = 0; u < length - i - 1; u++) {
