@@ -6,6 +6,10 @@ Most of them are from [Mega Project List](https://github.com/karan/projects).
 
 Solve systems of linear equations using Gauss-Jordan method
 
+**Shapes OOP**
+
+This is a sample of code that I've wrote while was learning C++ OOP principles 
+
 **Currency converter**
 
 Converts currency
