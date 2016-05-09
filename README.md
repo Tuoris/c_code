@@ -54,3 +54,7 @@ Calculates the distance between two cities using coordinates and allows the user
 **Coin Flip Simulator**
 
 Simulates flipping a coin however many times the user decides. Records the outcomes and count the number of tails and heads.
+
+**Fraction numbers**
+
+Class that provide basic fraction numbers operations
